@@ -1,0 +1,5 @@
+IDM result:
+gamma = 
+QPP(1)*(ZZ1 + ZZ2 + L1^2*M2 + 2*L1*MX2*cos(Q(1)) - 2*L1*MY2*sin(Q(1))) - QP(2)*(QP(1)*(L1*MY2*cos(Q(1)) + L1*MX2*sin(Q(1))) + QP(2)*(L1*MY2*cos(Q(1)) + L1*MX2*sin(Q(1)))) + QPP(2)*(ZZ2 + L1*MX2*cos(Q(1)) - L1*MY2*sin(Q(1))) - QP(1)*QP(2)*(L1*MY2*cos(Q(1)) + L1*MX2*sin(Q(1)))
+(L1*MY2*cos(Q(1)) + L1*MX2*sin(Q(1)))*QP(1)^2 + QPP(2)*ZZ2 + QPP(1)*(ZZ2 + L1*MX2*cos(Q(1)) - L1*MY2*sin(Q(1)))
+ 

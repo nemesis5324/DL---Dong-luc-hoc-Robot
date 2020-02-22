@@ -1,0 +1,253 @@
+Adams View model name: SCARA
+!
+!-------------------------------- SYSTEM UNITS ---------------------------------
+!
+UNITS/
+, FORCE = NEWTON
+, MASS = KILOGRAM
+, LENGTH = METER
+, TIME = SECOND
+!
+!----------------------------------- PARTS -------------------------------------
+!
+!----------------------------------- Ground ------------------------------------
+!
+!                            adams_view_name='ground'
+PART/1
+, GROUND
+!
+!                           adams_view_name='MARKER_1'
+MARKER/1
+, PART = 1
+, QP = 0, 0, -0.1298991354
+!
+!------------------------------------ Part -------------------------------------
+!
+!                             adams_view_name='BASE'
+PART/2
+, MASS = 29.43358157
+, CM = 12
+, IP = 2.17415349, 1.099744054, 1.099744054
+!
+!                           adams_view_name='MARKER_2'
+MARKER/2
+, PART = 2
+, QP = 0, 0, -0.1298991354
+!
+!                              adams_view_name='O1'
+MARKER/3
+, PART = 2
+, QP = 0, 0, -0.025
+!
+!                            adams_view_name='PSMAR'
+MARKER/11
+, PART = 2
+!
+!                              adams_view_name='cm'
+MARKER/12
+, PART = 2
+, QP = 0, 0, -0.1298991354
+, REULER = 4.71238898, 1.570796327, 1.570796327
+!
+!                          adams_view_name='MARKER_18'
+MARKER/18
+, PART = 2
+, QP = 0, 0, -0.025
+!
+!------------------------------------ Part -------------------------------------
+!
+!                            adams_view_name='Link1'
+PART/3
+!
+!                              adams_view_name='O1'
+MARKER/4
+, PART = 3
+, QP = 0, 0, -0.025
+!
+!                              adams_view_name='O2'
+MARKER/5
+, PART = 3
+, QP = 0.2, 0, 0
+!
+!                            adams_view_name='PSMAR'
+MARKER/13
+, PART = 3
+!
+!                          adams_view_name='MARKER_17'
+MARKER/17
+, PART = 3
+, QP = 0, 0, -0.025
+!
+!                          adams_view_name='MARKER_20'
+MARKER/20
+, PART = 3
+, QP = 0.2, 0, 0
+!
+!------------------------------------ Part -------------------------------------
+!
+!                            adams_view_name='Link2'
+PART/4
+, MASS = 0.4571949449
+, CM = 15
+, IP = 0.00140851, 0.001403332, 9.216008434E-05
+!
+!                              adams_view_name='O2'
+MARKER/6
+, PART = 4
+, QP = 0.2, 0, 0
+, REULER = 4.71238898, 0, 0
+!
+!                            adams_view_name='PSMAR'
+MARKER/14
+, PART = 4
+!
+!                              adams_view_name='cm'
+MARKER/15
+, PART = 4
+, QP = 0.2, -0.0553632785, 0.010215672
+, REULER = 0, 1.510224808, 0
+!
+!                              adams_view_name='P'
+MARKER/16
+, PART = 4
+, QP = 0.2, -0.1442, 0.025
+, REULER = 4.71238898, 0, 0
+!
+!                          adams_view_name='MARKER_19'
+MARKER/19
+, PART = 4
+, QP = 0.2, 0, 0
+!
+!------------------------------ DYNAMIC GRAPHICS -------------------------------
+!
+!                   adams_view_name='SFORCE_1_force_graphic_1'
+GRAPHICS/4
+, FORCE
+, ETYPE = SFORCE
+, EID = 1
+, EMARKER = 17
+!
+!                  adams_view_name='SFORCE_1_2_force_graphic_1'
+GRAPHICS/5
+, FORCE
+, ETYPE = SFORCE
+, EID = 2
+, EMARKER = 19
+!
+!-------------------------------- CONSTRAINTS ----------------------------------
+!
+!                             adams_view_name='FIX'
+JOINT/1
+, FIXED
+, I = 1
+, J = 2
+!
+!                           adams_view_name='JOINT_1'
+JOINT/2
+, REVOLUTE
+, I = 3
+, J = 4
+!
+!                           adams_view_name='JOINT_2'
+JOINT/3
+, REVOLUTE
+, I = 5
+, J = 6
+!
+!----------------------------------- FORCES ------------------------------------
+!
+!                           adams_view_name='SFORCE_1'
+SFORCE/1
+, ROTATIONAL
+, I = 17
+, J = 18
+, FUNCTION = VARVAL(3)
+!
+!                           adams_view_name='SFORCE_2'
+SFORCE/2
+, ROTATIONAL
+, I = 19
+, J = 20
+, FUNCTION = VARVAL(4)
+!
+!------------------------------ DATA STRUCTURES --------------------------------
+!
+!                              adams_view_name='Q1'
+VARIABLE/1
+, IC = 0
+, FUNCTION = AZ( 4, 3)
+!
+!                              adams_view_name='Q2'
+VARIABLE/2
+, IC = 0
+, FUNCTION = AZ( 6, 5)
+!
+!                            adams_view_name='GAMMA1'
+VARIABLE/3
+, IC = 0
+, FUNCTION = 0.00000000000000000e+000
+!
+!                            adams_view_name='GAMMA2'
+VARIABLE/4
+, IC = 0
+, FUNCTION = 0.00000000000000000e+000
+!
+!                              adams_view_name='Px'
+VARIABLE/5
+, IC = 0
+, FUNCTION = DX( 16, 3, 3)
+!
+!                              adams_view_name='Py'
+VARIABLE/6
+, IC = 0
+, FUNCTION = DY( 16, 3, 3)
+!
+!                             adams_view_name='QP1'
+VARIABLE/7
+, IC = 0
+, FUNCTION = WZ( 4, 3, 3)
+!
+!                             adams_view_name='QP2'
+VARIABLE/8
+, IC = 0
+, FUNCTION = WZ(6, 5, 5)
+!
+!                  adams_view_name='Model_Controls.ctrl_pinput'
+PINPUT/1
+, VARIABLES = 3, 4
+!
+!                    adams_view_name='JOINTSPACE.ctrl_pinput'
+PINPUT/2
+, VARIABLES = 3, 4
+!
+!                 adams_view_name='Controls_Plant_1.ctrl_pinput'
+PINPUT/3
+, VARIABLES = 3, 4
+!
+!                 adams_view_name='Model_Controls.ctrl_poutput'
+POUTPUT/1
+, VARIABLES = 1, 2
+!
+!                   adams_view_name='JOINTSPACE.ctrl_poutput'
+POUTPUT/2
+, VARIABLES = 5, 6, 1, 2, 7, 8
+!
+!                adams_view_name='Controls_Plant_1.ctrl_poutput'
+POUTPUT/3
+, VARIABLES = 5, 6, 1, 2, 7, 8
+!
+!------------------------- GRAVITATIONAL ACCELERATION --------------------------
+!
+ACCGRAV/
+, KGRAV = -9.80665
+!
+!----------------------------- ANALYSIS SETTINGS -------------------------------
+!
+OUTPUT/
+, REQSAVE
+, GRSAVE
+!
+RESULTS/
+, XRF
+!
+END

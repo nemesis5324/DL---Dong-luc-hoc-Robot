@@ -1,0 +1,53 @@
+CC     = "E:\Program Files\MATLAB\R2014a\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "E:\Program Files\MATLAB\R2014a\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "E:\Program Files\MATLAB\R2014a\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -DMX_COMPAT_32 -nodeclspec 
+LDFLAGS = -s -dll -L"E:\Program Files\MATLAB\R2014a\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"A5_TwoDOF_PID_torque_task_space_sfun.obj"\
+	"c1_A5_TwoDOF_PID_torque_task_space.obj"\
+	"c4_A5_TwoDOF_PID_torque_task_space.obj"\
+	"c7_A5_TwoDOF_PID_torque_task_space.obj"\
+	"c8_A5_TwoDOF_PID_torque_task_space.obj"\
+	"c9_A5_TwoDOF_PID_torque_task_space.obj"\
+	"c10_A5_TwoDOF_PID_torque_task_space.obj"\
+	"A5_TwoDOF_PID_torque_task_space_sfun_registry.obj"\
+	"lccstub.obj"\
+	"A5_TwoDOF_PID_torque_task_space_sfun.def"\
+	"E:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\sf_runtime.lib"\
+	"E:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libmwblas.lib"\
+	"E:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libmx.lib"\
+	"E:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libmex.lib"\
+	"E:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libmat.lib"\
+	"E:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libfixedpoint.lib"\
+	"E:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libut.lib"\
+	"E:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libmwmathutil.lib"\
+	"E:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libemlrt.lib"\
+	"E:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libmwsl_log_load_blocks.lib"\
+	"E:\Program Files\MATLAB\R2014a\lib\win64\libippmwipt.lib"\
+
+INCLUDE_PATH= -I"E:\Program Files\MATLAB\R2014a\sys\lcc64\lcc64\include64"  -I"E:\Program Files\MATLAB\R2014a\extern\include"  -I"E:\Program Files\MATLAB\R2014a\simulink\include"  -I"E:\Program Files\MATLAB\R2014a\stateflow\c\mex\include"  -I"E:\Program Files\MATLAB\R2014a\rtw\c\src"  -I"g:\Dropbox\6-Cao Hoc\Ky2\4 - DL - Dong luc hoc Robot\DL_Matlab\slprj\_sfprj\A5_TwoDOF_PID_torque_task_space\_self\sfun\src" 
+ 
+
+A5_TwoDOF_PID_torque_task_space_sfun.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o A5_TwoDOF_PID_torque_task_space_sfun.mexw64 @A5_TwoDOF_PID_torque_task_space_sfun.lmko
+A5_TwoDOF_PID_torque_task_space_sfun.obj :	"A5_TwoDOF_PID_torque_task_space_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "A5_TwoDOF_PID_torque_task_space_sfun.c"
+c1_A5_TwoDOF_PID_torque_task_space.obj :	"c1_A5_TwoDOF_PID_torque_task_space.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c1_A5_TwoDOF_PID_torque_task_space.c"
+c4_A5_TwoDOF_PID_torque_task_space.obj :	"c4_A5_TwoDOF_PID_torque_task_space.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c4_A5_TwoDOF_PID_torque_task_space.c"
+c7_A5_TwoDOF_PID_torque_task_space.obj :	"c7_A5_TwoDOF_PID_torque_task_space.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c7_A5_TwoDOF_PID_torque_task_space.c"
+c8_A5_TwoDOF_PID_torque_task_space.obj :	"c8_A5_TwoDOF_PID_torque_task_space.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c8_A5_TwoDOF_PID_torque_task_space.c"
+c9_A5_TwoDOF_PID_torque_task_space.obj :	"c9_A5_TwoDOF_PID_torque_task_space.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c9_A5_TwoDOF_PID_torque_task_space.c"
+c10_A5_TwoDOF_PID_torque_task_space.obj :	"c10_A5_TwoDOF_PID_torque_task_space.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c10_A5_TwoDOF_PID_torque_task_space.c"
+A5_TwoDOF_PID_torque_task_space_sfun_registry.obj :	"A5_TwoDOF_PID_torque_task_space_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "A5_TwoDOF_PID_torque_task_space_sfun_registry.c"
+lccstub.obj :	"E:\Program Files\MATLAB\R2014a\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "E:\Program Files\MATLAB\R2014a\sys\lcc64\lcc64\mex\lccstub.c"

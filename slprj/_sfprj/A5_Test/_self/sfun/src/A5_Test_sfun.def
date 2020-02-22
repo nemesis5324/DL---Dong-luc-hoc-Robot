@@ -1,0 +1,3 @@
+LIBRARY A5_Test_sfun.mexw64
+EXPORTS
+mexFunction
